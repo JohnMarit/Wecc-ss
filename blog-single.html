@@ -42,6 +42,9 @@
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="css/responsive.css">
 		
+				<!-- CONTENTFUL-->
+				<script src="https://unpkg.com/contentful/dist/contentful.browser.min.js"></script>
+
     </head>
     <body>
 	
@@ -178,6 +181,7 @@
 										<img src="img/blog1.jpg" alt="#">
 									</div>
 									<!-- News Title -->
+									 
 									<h1 class="news-title"><a href="news-single.html">WECSS team listening keenly to PSEA’s presentation at Glory Regency Hotel, Juba
 									</a></h1>
 									<!-- Meta -->
@@ -192,6 +196,51 @@
 										</div>
 									</div>
 									<!-- News Text -->
+
+
+
+
+	<!-- News Text 								
+  
+  <div id="blog"><h1>Contentful must be displayed here</h1></div>
+
+  <script src="https://unpkg.com/contentful/dist/contentful.browser.min.js"></script>
+  <script>
+	// Contentful initialization and function definitions
+	const client = contentful.createClient({
+	  space: "qj4ec65i8wxw",
+	  accessToken: "GEDz8iZ8M_CqbOF1n3E8ngeclm6MEU1vIEF97StOIs0"
+	});
+  
+	async function fetchBlogPosts() {
+	  try {
+		const response = await client.getEntries({ content_type: 'blogPost' });
+		return response.items;
+	  } catch (error) {
+		console.error("Error fetching posts:", error);
+	  }
+	}
+  
+	async function displayPosts() {
+	  const posts = await fetchBlogPosts();
+	  const blogSection = document.getElementById("blog");
+  
+	  posts.forEach(post => {
+		const postElement = document.createElement("div");
+		postElement.className = "blog-post";
+		postElement.innerHTML = `
+		  <h2>${post.fields.title}</h2>
+		  <p>${post.fields.body}</p>
+		`;
+		blogSection.appendChild(postElement);
+	  });
+	}
+  
+	displayPosts();
+  </script>-->
+
+
+
 									<div class="news-text">
 										<p>In the heart of Juba, South Sudan, a group of dedicated individuals gathered at the prestigious Glory Regency Hotel. The Women's Empowerment and Capacity Strengthening Services (WECSS) team, known for their unwavering commitment to women's empowerment, had convened for a crucial presentation by the Protection of Sexual Exploitation and Abuse (PSEA) unit.</p>
 										<p>The air was thick with anticipation as the PSEA representatives took the stage. Their mission was to shed light on the pervasive issue of sexual exploitation and abuse, particularly within humanitarian and development contexts. With a blend of compassion and determination, they delved into the complexities of the issue, highlighting the vulnerabilities faced by women and girls in conflict-affected regions.</p>
@@ -291,7 +340,12 @@
 								<div class="comments-form">
 									<h2>Leave Comments</h2>
 									<!-- Contact Form -->
-									<form class="form" method="post" action="mail/mail.php">
+
+
+									<div class="commentbox"></div>
+									<script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
+									<script>commentBox('5712559596371968-proj')</script>
+									<!-- <form class="form" method="post" action="mail/mail.php">
 										<div class="row">
 											<div class="col-lg-4 col-md-4 col-12">
 												<div class="form-group">
@@ -323,7 +377,7 @@
 												</div>
 											</div>
 										</div>
-									</form>
+									</form>-->
 									<!--/ End Contact Form -->
 								</div>
 							</div>
